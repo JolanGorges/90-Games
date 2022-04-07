@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'Dunjon';
+  src: url(../fonts/Enchanted\ Land.otf);
+}
+
+@font-face {
+  font-family: 'Blood';
+  src: url(../fonts/NightmareRegular-vmOzA.ttf);
+}
+
+h1,
+h2 {
+  text-align:  center;
+}
+
+body {
+  font-family: Dunjon;
+  margin: 0;
+}
+
+.container {
+  width: 800px;
+  margin : 50px auto;
+  padding: 20px;
+  border: 1px solid;
+}
+
+#background {
+  width: 700px;
+  margin: 10px auto;
+  height: 400px;
+  background-image: url(../img/background.jfif);
+  background-size: cover;
+  position: relative;
+}
+
+#hero {
+  height: 250px;
+  position: absolute;
+  bottom: 5px;
+  left: 40px;
+}
+
+.spider {
+  position: absolute;
+  bottom: 5px;
+  right: 40px;
+  height: 150px;
+}
+
+.skeleton {
+  position: absolute;
+  bottom: 25px;
+  right: 90px;
+  height: 180px;
+}
+
+#boss1 {
+  position: absolute;
+  right: 40px;
+  bottom: 25px;
+  height: 250px;
+}
+
+#boss2 {
+  position: absolute;
+  right: 60px;
+  bottom: 25px;
+  height: 230px;
+}
+
+#boss3 {
+  position: absolute;
+  right: 40px;
+  bottom: 25px;
+  height: 150px;
+}
+
+#action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#action button {
+  margin-right: 10px;
+}
+
+#bag {
+  margin-top: 10px;
+  border: 1px solid;
+  padding: 10px;
+}
+
+#equipement,
+#potions {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#potions img,
+#equipement img {
+  height: 40px;
+}
+
+#btnAttack,
+#btnRamasser,
+#btnUtiliser,
+#btnNext,
+#bag {
+  display: none;
+}
+
+#pvHero {
+  position: absolute;
+  border: 1px solid;
+  height: 398px;
+  width: 40px;
+}
+
+#pvHero div {
+  background-color: rgb(93, 206, 93);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom:0;
+}
+
+#pvMonster {
+  position: absolute;
+  border: 1px solid;
+  top: 0;
+  right: -50px;
+  height: 398px;
+  width: 40px;
+}
+
+#pvMonster div {
+  background-color: rgb(187, 187, 101);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom:0;
+}
+
+#lose {
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: Blood;
+  color: red;
+  font-size: 100px;
+  position: absolute;
+  z-index:9999;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.719);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 270px;
+  display: none;
+}
+
+#lose a {
+  font-family: 'roboto';
+  text-decoration: none;
+  font-style: italic;
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  font-size: 40px;
+}
