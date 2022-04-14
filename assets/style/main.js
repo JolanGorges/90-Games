@@ -126,17 +126,6 @@ affichageHeros(){
   console.log('#nom',this.#nom,'#Prenom',this.#Prenom ,'#Force',this.#Force ,'Defense',this.#Defense,'#Degats',this.#Degats ,'#PointDeVie',this.#PointDeVie,
     '#SacDePotions',this.#SacDePotions,'#SacDarme',this.#SacDarme);
 }
-
-//FORCE ET DEFENCE ALEATOIRE
-// FDaleatoir(){
-//   this.Force=Math.floor(Math.random()*(Heros.MaxForce-Heros.MinForce) )+1;
-//   this.Defense =Math.floor(Math.random()*(Heros.MaxDef-Heros.MinDef) )+1;
-//   console.log("Defense","Force");
-// }
-
 }
 let heros = new Heros("MOMO","SOUI",0,0,0,91,1,5 );
-// heros.FDaleatoir();
-console.log(heros);
-heros.utilisationPotion();
  
