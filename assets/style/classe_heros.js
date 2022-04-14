@@ -129,4 +129,3 @@ affichageHeros(){
 
 
 }
-let heros = new Heros("MOMO","SOUI",0,0,0,91,1,5 );
