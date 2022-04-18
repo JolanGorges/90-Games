@@ -66,13 +66,13 @@ get pointDeVie(){
   return this.#pointDeVie ;
 }
 set pointDeVie(tmp){
-  if (this.pointDeVie > 100) {
-      this.pointDeVie = 100;
-  } if (this.pointDeVie < 0) {
-    this.pointDeVie = 0;
+  if (this.#pointDeVie > 100) {
+      this.#pointDeVie = 100;
+  } else if (this.#pointDeVie < 0) {
+    this.#pointDeVie = 0;
   } 
-  else {
-    this.pointDeVie = this.pointDeVie;
+  else  {
+    this.#pointDeVie = tmp;
   }
 }
 
