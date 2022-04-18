@@ -67,4 +67,3 @@ morte
 - Méthode de suppression du dom : pareil qu’au-dessus
 - Méthode permettant de lâcher une potion / arme : pareil qu’au-dessus */
 }
-
