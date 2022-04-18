@@ -12,16 +12,16 @@ class Heros {
 // VARIABLE STATIC 
 static degats = 3;
 static minForce = 3
-static maxForce = 10
+static maxForce = 11
 static minDef = 1
-static maxDef = 5
+static maxDef = 6
 // Constructeur
 constructor(nom,prenom,force,defense,degats,pointDeVie,sacDePotions, sacDarme){
   this.nom = nom;
   this.prenom = prenom;
-  this.force = force;
-  this.defense = defense; 
-  this.degats = degats;
+  this.force = Math.floor(Math.random()*(Heros.maxForce-Heros.minForce) )+3;
+  this.defense = Math.floor(Math.random()*(Heros.maxDef-Heros.minDef) )+1 ; 
+  this.degats = this.force*Heros.degats ;
   this.pointDeVie = pointDeVie;
   this.sacDePotions  = sacDePotions;
   this.sacDarme = sacDarme;
@@ -95,8 +95,8 @@ attaque(monstre){
   monstre.defense -= this.degats;
   if (monstre.defense <= 0) {
     monstre.pointDeVie =- this.degats;
-    return monstre.pointDeVie
-  } 
+    } 
+
   else if(monstre.pointDeVie ===0){
     return true ;
   } else {
@@ -121,13 +121,6 @@ utilisationPotion(){
   this.pointDeVie +=10;
   this.sacDePotions -=1;
 }
-//FORCE ET DEFENSE ALEATOIRE + DEGATS
-fdAleatoire(){
-  this.force = Math.floor(Math.random()*(Heros.maxForce-Heros.minForce) )+1;
-  this.defense = Math.floor(Math.random()*(Heros.maxDef-Heros.minDef) )+1 ;
-  this.degats = this.force*Heros.degats ; 
-}
-
 affichageHeros(){
   console.log('#nom',this.#nom,'#prenom',this.#prenom ,'#force',this.#force ,'defense',this.#defense,'#degats',this.#degats ,'#pointDeVie',this.#pointDeVie,
     '#sacDePotions',this.#sacDePotions,'#sacDarme',this.#sacDarme);
