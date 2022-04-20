@@ -92,16 +92,7 @@ set sacDarme(tmp){
 
 // METHODE ATTAQUE 
 attaque(monstre){
-  monstre.defense -= this.degats;
-  if (monstre.defense <= 0) {
-    monstre.pointDeVie =- this.degats;
-    } 
-
-  else if(monstre.pointDeVie ===0){
-    return true ;
-  } else {
-    return false ;
-  }
+  monstre.pointDeVie = monstre.defense - this.#degats ;
 }
 //METHODE VERIFICATION EQUIPEMENT 
 recupEquipement(nbPotion,nbArme ){
