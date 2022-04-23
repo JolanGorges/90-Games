@@ -1,26 +1,26 @@
 @font-face {
-  font-family: 'Dunjon';
-  src: url(../fonts/Enchanted\ Land.otf);
+  font-family: 'Dungeon';
+  src: url(../fonts/enchanted-land.woff2);
 }
 
 @font-face {
   font-family: 'Blood';
-  src: url(../fonts/NightmareRegular-vmOzA.ttf);
+  src: url(../fonts/nightmare-regular.woff2);
 }
 
 h1,
 h2 {
-  text-align:  center;
+  text-align: center;
 }
 
 body {
-  font-family: Dunjon;
+  font-family: Dungeon, serif;
   margin: 0;
 }
 
 .container {
   width: 800px;
-  margin : 50px auto;
+  margin: 50px auto;
   padding: 20px;
   border: 1px solid;
 }
@@ -41,35 +41,35 @@ body {
   left: 40px;
 }
 
-.spider {
+#spider {
   position: absolute;
   bottom: 5px;
   right: 40px;
   height: 150px;
 }
 
-.skeleton {
+#skeleton {
   position: absolute;
   bottom: 25px;
   right: 90px;
   height: 180px;
 }
 
-#boss1 {
+#boss-1 {
   position: absolute;
   right: 40px;
   bottom: 25px;
   height: 250px;
 }
 
-#boss2 {
+#boss-2 {
   position: absolute;
   right: 60px;
   bottom: 25px;
   height: 230px;
 }
 
-#boss3 {
+#boss-3 {
   position: absolute;
   right: 40px;
   bottom: 25px;
@@ -86,13 +86,13 @@ body {
   margin-right: 10px;
 }
 
-#bag {
+#inventory {
   margin-top: 10px;
   border: 1px solid;
   padding: 10px;
 }
 
-#equipement,
+#weapons,
 #potions {
   height: 50px;
   display: flex;
@@ -101,34 +101,33 @@ body {
 }
 
 #potions img,
-#equipement img {
+#weapons img {
   height: 40px;
 }
 
-#btnAttack,
-#btnRamasser,
-#btnUtiliser,
-#btnNext,
+#btn-attack,
+#btn-use,
+#btn-next,
 #bag {
   display: none;
 }
 
-#pvHero {
+#hero-health {
   position: absolute;
   border: 1px solid;
   height: 398px;
   width: 40px;
 }
 
-#pvHero div {
+#hero-health div {
   background-color: rgb(93, 206, 93);
   position: absolute;
   height: 100%;
   width: 100%;
-  bottom:0;
+  bottom: 0;
 }
 
-#pvMonster {
+#monster-health {
   position: absolute;
   border: 1px solid;
   top: 0;
@@ -137,34 +136,33 @@ body {
   width: 40px;
 }
 
-#pvMonster div {
+#monster-health div {
   background-color: rgb(187, 187, 101);
   position: absolute;
   height: 100%;
   width: 100%;
-  bottom:0;
+  bottom: 0;
 }
 
 #lose {
   box-sizing: border-box;
   text-transform: capitalize;
-  font-family: Blood;
+  font-family: Blood, serif;
   color: red;
   font-size: 100px;
   position: absolute;
-  z-index:9999;
+  z-index: 9999;
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.719);
   height: 100vh;
-  display: flex;
   justify-content: center;
   padding-top: 270px;
   display: none;
 }
 
 #lose a {
-  font-family: 'roboto';
+  font-family: 'roboto', serif;
   text-decoration: none;
   font-style: italic;
   color: white;

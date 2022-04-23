@@ -1,29 +1,39 @@
-import { Monstre } from "./monster.js";
-export class Boss extends Monstre {
-  static linkToImg = "assets/img/";
-  static variousColor = ["boss-1", "boss-2", "boss-3"];
-  static luckWeapon = 5;
-  static luckPotion = 3;
+import Monster from './monster.js';
 
-  addDom(container) {
-    const img = document.createElement("img");
-    const colorIndex = Math.floor(Math.random() * variousColor.length);
-    img.src = linkToImg + Boss.variousColor[colorIndex];
-    img.setAttribute("id", "boss" + (colorIndex + 1));
-    container.appendChild(img);
-    super.target = img;
-  }
+export default class Boss extends Monster {
+  static variations = ['boss-1', 'boss-2', 'boss-3'];
+  static weaponDropRate = 5;
+  static potionDropRate = 3;
+  static defaultHealth = 20;
+  static defaultAttack = 10;
+  static defaultDefense = 9;
 
-  removeDom(container) {
-    super.target.remove();
+  constructor(coefficient) {
+    super();
+    super.health = Boss.defaultHealth * coefficient;
+    super.attack = Boss.defaultAttack * coefficient;
+    super.defense = Boss.defaultDefense;// * coefficient;
   }
 
   dropItems() {
-    const potion = Math.floor(Math.random() * Boss.luckPotion) + 1;
-    const weapon = Math.floor(Math.random() * Boss.luckWeapon) + 1;
-    const items = [false, false];
-    if (potion == 1) items[0] = true;
-    if (weapon == 1) items[1] = true;
-    return items;
+    const potion = Math.floor(Math.random() * Boss.potionDropRate) + 1;
+    const weapon = Math.floor(Math.random() * Boss.weaponDropRate) + 1;
+    return {
+      hasPotion: potion === 1,
+      hasWeapon: weapon === 1,
+    };
+  }
+
+  addDom(container) {
+    const img = document.createElement('img');
+    const colorIndex = Math.floor(Math.random() * Boss.variations.length);
+    img.src = `${Boss.imagesPath}${Boss.variations[colorIndex]}.png`;
+    img.setAttribute('id', Boss.variations[colorIndex]);
+    container.appendChild(img);
+    super.monsterEl = img;
+  }
+
+  removeDom() {
+    super.monsterEl.remove();
   }
 }

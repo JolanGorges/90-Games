@@ -1,69 +1,64 @@
-export class Monstre {
-  #nom;
-  #attaque;
+export default class Monster {
+  static imagesPath = 'assets/img/';
+  #name;
+  #attack;
   #defense;
-  #pointDeVie;
-  #images;
-  #target;
+  #health;
+  #monsterEl;
 
-  constructor(nom, attaque, defense, pointDeVie, images, target) {
-  }
   get nom() {
-    return this.#Nom;
+    return this.#name;
   }
+
   set nom(value) {
-    this.#Nom = value;
+    this.#name = value;
   }
-  get attaque() {
-    return this.#attaque;
+
+  get attack() {
+    return this.#attack;
   }
-  set attaque(value) {
-    this.#attaque = value;
+
+  set attack(value) {
+    this.#attack = value;
   }
+
   get defense() {
     return this.#defense;
   }
+
   set defense(value) {
     this.#defense = value;
   }
-get pointDeVie() {
-    return this.#pointDeVie;
+
+  get health() {
+    return this.#health;
   }
-set pointDeVie(value) {
-    this.#pointDeVie = value;
+
+  set health(value) {
+    if (value > 100) this.#health = 100;
+    else if (value < 0) this.#health = 0;
+    else this.#health = value;
   }
-get images() {
-    return this.#images;
+
+  get monsterEl() {
+    return this.#monsterEl;
   }
-set images(value) {
-    this.#images = value;}
-  
-get target(){
-    return this.#target;
-    } 
-set target(){
-    this.#target= value;
 
-}
-/* METHODE ATTAQUE */
-attack(){
+  set monsterEl(value) {
+    this.#monsterEl = value;
+  }
 
-}
-addDom(){
+  attackTarget(target) {
+    target.health -= this.#attack - target.defense;
+    return target.health === 0;
+  }
 
-}
-removeDom(){
+  addDom() {
+  }
 
-}
-dropItems(){
+  removeDom() {
+  }
 
-}
-  /*
-- Méthode d’attaque qui prend en paramètre la cible, qui mets à jour les points de vie de la cible
-en diminuant l’attaque du monstre par la défense de la cible. Elle renvoie true si sa cible est
-morte
-  
-- Méthode d’ajout dans le dom : qui est vide et sera construire dans les classes filles
-- Méthode de suppression du dom : pareil qu’au-dessus
-- Méthode permettant de lâcher une potion / arme : pareil qu’au-dessus */
+  dropItems() {
+  }
 }

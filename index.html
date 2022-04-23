@@ -5,39 +5,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Games</title>
-  <!-- <script type="module" src="assets/script/game.js"></script> -->
+  <title>90 Games</title>
+  <script src="assets/js/monsters/monster.js" type="module"></script>
+  <script src="assets/js/monsters/spider.js" type="module"></script>
+  <script src="assets/js/monsters/skeleton.js" type="module"></script>
+  <script src="assets/js/monsters/boss.js" type="module"></script>
+  <script src="assets/js/hero.js" type="module"></script>
+  <script src="assets/js/game.js" type="module"></script>
+  <script src="assets/js/index.js" type="module"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Dungeon Master</h1>
-    <h2 id="step"></h2>
-    <div id="pvHero">
+<div class="container">
+  <h1>Dungeon Master</h1>
+  <h2 id="floor"></h2>
+  <div id="hero-health">
+    <div></div>
+  </div>
+  <div id="background">
+    <img alt="" id="hero" src="assets/img/hero.png">
+    <div id="monster-health">
       <div></div>
     </div>
-    <div id="background">
-      <img id="hero" src="assets/img/hero.png" alt="">
-      <div id="pvMonster">
-        <div></div>
-      </div>
+  </div>
+  <div id="action">
+    <button id="btn-attack">Attaque</button>
+    <button id="btn-use">Utiliser</button>
+    <button id="btn-next">Suivant</button>
+  </div>
+  <div id="inventory">
+    Armes :
+    <div id="weapons">
     </div>
-    <div id="action">
-      <button id="btnAttack">Attaque</button>
-      <button id="btnUtiliser">Utiliser</button>
-      <button id="btnNext">Suivant</button>
-    </div>
-    <div id="bag">
-      Equipement:
-      <div id="equipement">
-      </div>
-      Potions:
-      <div id="potions">
-      </div>
+    Potions :
+    <div id="potions">
     </div>
   </div>
+</div>
   <div id="lose">
     you lose ! <br>
-    <a href="javascript:location.reload(true)">Recommencer</a>
+    <a href="javascript:location.reload()">Recommencer</a>
   </div>
 </body>
 </html>
