@@ -1,9 +1,9 @@
 export default class Hero {
-  static attack = 3;
-  static minStrength = 3;
-  static maxStrength = 11;
-  static minDefense = 1;
-  static maxDefense = 5;
+  static #damage = 3;
+  static #minStrength = 3;
+  static #maxStrength = 11;
+  static #minDefense = 1;
+  static #maxDefense = 5;
   #defense;
   #attack;
   #health = 100;
@@ -11,9 +11,9 @@ export default class Hero {
   #weaponCount = 0;
 
   constructor() {
-    const strength = Math.floor((Math.random()) * (Hero.maxStrength - Hero.minStrength + 1)) + Hero.minStrength;
-    this.#defense = Math.floor((Math.random()) * (Hero.maxDefense - Hero.minDefense + 1)) + Hero.minDefense;
-    this.#attack = strength * Hero.attack;
+    const strength = Math.floor((Math.random()) * (Hero.#maxStrength - Hero.#minStrength + 1)) + Hero.#minStrength;
+    this.#defense = Math.floor((Math.random()) * (Hero.#maxDefense - Hero.#minDefense + 1)) + Hero.#minDefense;
+    this.#attack = strength * Hero.#damage;
   }
 
   get health() {
@@ -30,20 +30,16 @@ export default class Hero {
     return this.#potionCount;
   }
 
+  get weaponCount() {
+    return this.#weaponCount;
+  }
+
   get defense() {
     return this.#defense;
   }
 
   set defense(value) {
     this.#defense = value;
-  }
-
-  get attack() {
-    return this.#attack;
-  }
-
-  set attack(value) {
-    this.#attack = value;
   }
 
   attackTarget(target) {

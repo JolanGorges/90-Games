@@ -55,10 +55,6 @@ export default class Game {
     return this.#potionsEl;
   }
 
-  set potionsEl(value) {
-    this.#potionsEl = value;
-  }
-
   get loseEl() {
     return this.#loseEl;
   }
@@ -79,7 +75,7 @@ export default class Game {
       this.#potionsEl.appendChild(img);
       this.#inventoryEl.style.display = 'block';
     }
-    if (this.#hero.potionCount > this.#weaponsEl.querySelectorAll('img').length) {
+    if (this.#hero.weaponCount > this.#weaponsEl.querySelectorAll('img').length) {
       const img = document.createElement('img');
       img.src = 'assets/img/weapon.png';
       this.#weaponsEl.appendChild(img);

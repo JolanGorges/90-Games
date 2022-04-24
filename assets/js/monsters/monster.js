@@ -1,21 +1,14 @@
 export default class Monster {
   static imagesPath = 'assets/img/';
-  #name;
   #attack;
   #defense;
   #health;
   #monsterEl;
 
-  get nom() {
-    return this.#name;
-  }
-
-  set nom(value) {
-    this.#name = value;
-  }
-
-  get attack() {
-    return this.#attack;
+  constructor(attack, defense, health) {
+    this.#attack = attack;
+    this.#defense = defense;
+    this.#health = health;
   }
 
   set attack(value) {
@@ -57,6 +50,7 @@ export default class Monster {
   }
 
   removeDom() {
+    this.#monsterEl.remove();
   }
 
   dropItems() {
